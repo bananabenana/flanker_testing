@@ -374,8 +374,6 @@ def flank_fasta_file_circ(file, window, gene):
                         #record.seq = record.seq.reverse_complement()
                         if args.flank == 'upstream':
                             x = 'downstream'
-                        elif args.flank =='both':
-                            x = 'both'
                         else:
                             x = 'upstream'
 
@@ -491,8 +489,6 @@ def flank_fasta_file_lin(file, window, gene):
 
                         if args.flank == 'upstream':
                             x = 'downstream'
-                        elif args.flank =='both':
-                            x = 'both'
                         else:
                             x = 'upstream'
 
@@ -544,7 +540,7 @@ def flanker_main():
                         args.outfile,
                         args.kmer_length,
                         args.sketch_size)
-                    cluster.flank_scrub()
+                #     cluster.flank_scrub()
 
             if args.cluster and args.mode == 'mm':
 
@@ -557,7 +553,7 @@ def flanker_main():
                     args.kmer_length,
                     args.sketch_size)
                 log.info("Cleaning up")
-                cluster.flank_scrub()
+                # cluster.flank_scrub()
 
     else:
         for gene in gene_list:
@@ -579,7 +575,7 @@ def flanker_main():
                     args.kmer_length,
                     args.sketch_size)
                 log.info("Cleaning up")
-                cluster.flank_scrub()
+                # cluster.flank_scrub()
 
         if args.cluster and args.mode == 'mm':
             log.info("Performing clustering")
@@ -592,7 +588,7 @@ def flanker_main():
                 args.kmer_length,
                 args.sketch_size)
             log.info("Cleaning up")
-            cluster.flank_scrub()
+            # cluster.flank_scrub()
 
 
 def main():
